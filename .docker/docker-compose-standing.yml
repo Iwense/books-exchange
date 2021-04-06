@@ -1,0 +1,14 @@
+version: '3.7'
+# $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+services:
+  web:
+    image: registry.gitlab.com/simbirsoft1/spring-training-2021/books-exchange/frontend:latest
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - docker_webappnetwork
+
+networks:
+  docker_webappnetwork:
+    external: true
